@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@natr/genealogist": [
+        "dist/natr/genealogist"
+      ],
+      "@natr/genealogist/*": [
+        "dist/natr/genealogist/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
