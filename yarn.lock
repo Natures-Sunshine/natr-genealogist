@@ -880,12 +880,12 @@
     to-fast-properties "^2.0.0"
 
 "@natr/the-trees@file:../natr-the-trees/dist/natr/the-trees":
-  version "0.0.2"
+  version "0.0.8"
   dependencies:
     tslib "^1.9.0"
 
 "@natr/the-trees@file:/home/jacob/dev/javascript/natr-the-trees/dist/natr/the-trees":
-  version "0.0.2"
+  version "0.0.8"
   dependencies:
     tslib "^1.9.0"
 
@@ -898,6 +898,11 @@
   version "8.6.0"
   resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-8.6.0.tgz#63e7875d0e83e552249b8b75bb9b6aba248cae2a"
   integrity sha512-Qq+ANgsHd2/i7gam1j05hxA8kPWQyf5ewtCLlbtMJI/qLmvA6ruSE8PYNNwrt90wm4BWdks2zKE5ERzvPzto0w==
+
+"@ngrx/schematics@^8.6.0":
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-8.6.0.tgz#5387c0abc438768e4cb56c0b617082e0db2f00d7"
+  integrity sha512-d28FVsLWFJYxpMFnqzWvdbFSSPNlLUIezd0c4zlyf4CyNS/C8aw6Lio9xjOJHhgZuHvFuO9GwRrYV/GaS6wC7A==
 
 "@ngrx/store-devtools@^8.6.0":
   version "8.6.0"

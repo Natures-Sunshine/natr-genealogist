@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Store} from '@ngrx/store';
-import {TreeState} from '@natr/the-trees/lib/+state/reducers/tree.reducer';
+import {Component, OnInit} from '@angular/core';
 import {TreeDataFacadeService} from '@natr/the-trees';
+import {GenealogistService} from '../../../../../natr/genealogist/src/lib/genealogist.service';
 
 @Component({
   selector: 'app-tree-search',
@@ -10,7 +9,7 @@ import {TreeDataFacadeService} from '@natr/the-trees';
 })
 export class TreeSearchComponent implements OnInit {
 
-  constructor(private treeDataFacade: TreeDataFacadeService) {
+  constructor(private treeDataFacade: TreeDataFacadeService, private genealogistService: GenealogistService) {
   }
 
   ngOnInit() {
@@ -18,4 +17,7 @@ export class TreeSearchComponent implements OnInit {
     this.treeDataFacade.dispatchRemoteLoadTree(new URL('http://localhost:4200/assets/tree.json'));
   }
 
+  search() {
+    this.genealogistService.dispatchSearch('C');
+  }
 }

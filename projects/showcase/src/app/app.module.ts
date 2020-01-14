@@ -7,6 +7,7 @@ import {TreeSearchComponent} from './components/tree-search/tree-search.componen
 import {TheTreesModule} from '@natr/the-trees';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
+import {GenealogistModule} from '../../../natr/genealogist/src/lib/genealogist.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {EffectsModule} from '@ngrx/effects';
     AppRoutingModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
-    TheTreesModule
+    TheTreesModule,
+    GenealogistModule
   ],
   providers: [],
   bootstrap: [AppComponent]

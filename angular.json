@@ -41,7 +41,7 @@
     "showcase": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
+        "@ngrx/schematics:component": {
           "style": "scss"
         }
       },
@@ -159,6 +159,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "@natr/genealogist"
+    }
+  },
+  "defaultProject": "@natr/genealogist",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
