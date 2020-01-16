@@ -127,10 +127,10 @@ export class GenealogistService {
   }
 
   static search(search, treeData: TreeModel): TreeModel {
-    const root = treeData.nodes.find(node => node.label === search);
+    const root = treeData.nodes.find(node => node.label.includes(search));
     console.log(`${GenealogistService.name} root`, root);
 
-    return GenealogistService.buildFlatTree(root, treeData, null);
+    return GenealogistService.buildFlatTree(root, treeData);
   }
 
   dispatchSearch(searchString: string) {

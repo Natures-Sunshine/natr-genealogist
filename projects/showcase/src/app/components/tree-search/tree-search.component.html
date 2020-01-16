@@ -1,8 +1,8 @@
 
 <div>
-  <label>Search term:</label> <input/>
+  <label>Search term:</label> <input [(ngModel)]="searchTerm"/>
   <button (click)="search()">Search!</button>
 </div>
-<div>
-  <lib-the-trees></lib-the-trees>
+<div style="height: 100%">
+  <lib-the-trees style="height: 100%"></lib-the-trees>
 </div>

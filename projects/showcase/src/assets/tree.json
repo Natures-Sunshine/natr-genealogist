@@ -2,23 +2,23 @@
   "nodes": [
     {
       "id": "1",
-      "label": "A"
+      "label": "one"
     },
     {
       "id": "2",
-      "label": "B"
+      "label": "two"
     },
     {
       "id": "3",
-      "label": "C"
+      "label": "three"
     },
     {
       "id": "4",
-      "label": "d"
+      "label": "four"
     },
     {
       "id": "5",
-      "label": "e"
+      "label": "five"
     }
   ],
   "edges": [

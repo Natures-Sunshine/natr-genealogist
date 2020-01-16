@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TreeDataFacadeService} from '@natr/the-trees';
 import {GenealogistService} from '../../../../../natr/genealogist/src/lib/genealogist.service';
-import {SearchCallbackFunctionType} from '../../../../../natr/genealogist/src/lib/+state/search/actions/search.actions';
-import {TreeModel} from '@natr/the-trees/lib/models/tree.model';
 
 @Component({
   selector: 'app-tree-search',
@@ -10,6 +8,7 @@ import {TreeModel} from '@natr/the-trees/lib/models/tree.model';
   styleUrls: ['./tree-search.component.scss']
 })
 export class TreeSearchComponent implements OnInit {
+  searchTerm: string;
 
 
   constructor(private treeDataFacade: TreeDataFacadeService, private genealogistService: GenealogistService) {
@@ -27,7 +26,11 @@ export class TreeSearchComponent implements OnInit {
   }
 
   search() {
-    this.genealogistService.dispatchSearch('C');
+    if (this.searchTerm) {
+      this.genealogistService.dispatchSearch(this.searchTerm);
+    } else {
+      this.treeDataFacade.dispatchRemoteLoadTree(new URL('http://localhost:4200/assets/tree.json'));
+    }
   }
 
   callbackSearch() {
