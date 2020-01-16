@@ -880,12 +880,7 @@
     to-fast-properties "^2.0.0"
 
 "@natr/the-trees@file:../natr-the-trees/dist/natr/the-trees":
-  version "0.0.8"
-  dependencies:
-    tslib "^1.9.0"
-
-"@natr/the-trees@file:/home/jacob/dev/javascript/natr-the-trees/dist/natr/the-trees":
-  version "0.0.8"
+  version "0.0.9"
   dependencies:
     tslib "^1.9.0"
 

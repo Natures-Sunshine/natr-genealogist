@@ -27,6 +27,7 @@
     "@ngrx/store-devtools": "^8.6.0",
     "@swimlane/ngx-graph": "^6.2.0",
     "rxjs": "~6.4.0",
+    "sprintf-js": "^1.1.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

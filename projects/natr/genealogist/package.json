@@ -9,6 +9,7 @@
     "@ngrx/entity": "^8.0.0",
     "@ngrx/store": "^8.0.0",
     "@ngrx/store-devtools": "^8.0.0",
-    "@natr/the-trees": "^0.0.1"
+    "@natr/the-trees": "^0.0.1",
+    "sprintf-js": "^1.1.2"
   }
 }

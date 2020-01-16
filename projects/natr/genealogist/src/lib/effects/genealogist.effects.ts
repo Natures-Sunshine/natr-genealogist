@@ -29,7 +29,7 @@ export class GenealogistEffects {
           ([action, treeData]: [SearchActionPropType & Action, TreeModel]) => {
             console.log(`${GenealogistEffects.name} loadSearch action`, action);
             console.log(`${GenealogistEffects.name} loadSearch treeData`, treeData);
-            const filteredData = this.genealogistService.search(action.searchObject, treeData);
+            const filteredData = GenealogistService.search(action.searchObject, treeData);
             this.treeDataFacade.dispatchLocalLoadTree(filteredData);
           }
         )
