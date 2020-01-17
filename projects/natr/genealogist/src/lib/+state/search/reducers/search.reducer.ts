@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import {createReducer, on} from '@ngrx/store';
 import * as SearchActions from '../actions/search.actions';
 
 export const searchFeatureKey = 'search';
@@ -18,8 +18,12 @@ const doSearchFunction = (state: SearchState, action): SearchState => {
   return state;
 };
 
-export const searchReducer = createReducer(
+const searchReducerRef = createReducer(
   initialState,
   on(SearchActions.doSearch, doSearchFunction),
 );
+
+export function searchReducer(state, action) {
+  return searchReducerRef(state, action);
+}
 

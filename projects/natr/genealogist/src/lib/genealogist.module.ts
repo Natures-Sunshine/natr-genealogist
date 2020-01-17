@@ -3,7 +3,7 @@ import {GenealogistComponent} from './genealogist.component';
 import {EffectsModule} from '@ngrx/effects';
 import {GenealogistEffects} from './effects/genealogist.effects';
 import {StoreModule} from '@ngrx/store';
-import * as fromGenealogistState from './+state';
+import * as fromGenealogistState from './+state/index';
 
 
 @NgModule({

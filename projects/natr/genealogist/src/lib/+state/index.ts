@@ -9,7 +9,7 @@ export interface GenealogistState {
 }
 
 export const reducers: ActionReducerMap<GenealogistState> = {
-  [searchFeatureKey]: searchReducer
+  search: searchReducer
 };
 
 
