@@ -9,21 +9,29 @@ import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {GenealogistModule} from '../../../natr/genealogist/src/lib/genealogist.module';
 import {FormsModule} from '@angular/forms';
+import {UsrInfoDialogComponent} from './components/usr-info-dialog/usr-info-dialog.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatDialogModule} from '@angular/material';
 
 @NgModule({
+  entryComponents: [UsrInfoDialogComponent],
   declarations: [
     AppComponent,
-    TreeSearchComponent
+    TreeSearchComponent,
+    UsrInfoDialogComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        StoreModule.forRoot({}),
-        EffectsModule.forRoot([]),
-        TheTreesModule,
-        GenealogistModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    TheTreesModule,
+    GenealogistModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

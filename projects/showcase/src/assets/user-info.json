@@ -1,0 +1,29 @@
+{
+  "name": "Betty Jane",
+  "sponsor": "Da Coolz",
+  "topOfTree": "Joe",
+  "placedUnder": "Joe",
+  "volume": {
+    "jan": {
+      "cv": 100,
+      "autoshipCv": 20,
+      "leftCv": 20,
+      "rightCv": 20,
+      "banked": "10"
+    },
+    "dec": {
+      "cv": 100,
+      "autoshipCv": 20,
+      "leftCv": 20,
+      "rightCv": 20,
+      "banked": "10"
+    },
+    "nov": {
+      "cv": 100,
+      "autoshipCv": 20,
+      "leftCv": 20,
+      "rightCv": 20,
+      "banked": "10"
+    }
+  }
+}

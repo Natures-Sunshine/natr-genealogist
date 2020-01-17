@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>{{userData?.name}}</h1>
+<div mat-dialog-content>
+  <div *ngIf="userData">
+
+    <div>
+      <h4>Top of Tree</h4>
+      <div>{{userData.topOfTree}}</div>
+    </div>
+    <div>
+      <h4>Sponsor</h4>
+      <div>{{userData.sponsor}}</div>
+    </div>
+    <div>
+      <h4>Placed Under</h4>
+      <div>{{userData.placedUnder}}</div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Close</button>
+</div>
+
