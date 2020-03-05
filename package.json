@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@natr/historian": "^0.0.4",
     "@natr/the-trees": "file:/home/jacob/dev/javascript/natr-the-trees/dist/natr/the-trees",
     "@ngrx/effects": "^8.6.0",
     "@ngrx/entity": "^8.6.0",

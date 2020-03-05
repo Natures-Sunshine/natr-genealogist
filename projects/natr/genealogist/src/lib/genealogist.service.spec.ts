@@ -2,6 +2,9 @@ import {TestBed} from '@angular/core/testing';
 
 import {GenealogistService} from './genealogist.service';
 import {TreeModel} from '@natr/the-trees/lib/models/tree.model';
+import {MockStore, provideMockStore} from '@ngrx/store/testing';
+import {initialState} from '@natr/the-trees';
+import {Store} from '@ngrx/store';
 
 const newData: TreeModel = {
   nodes: [
@@ -84,11 +87,24 @@ const newData: TreeModel = {
   ]
 };
 
+
 describe('GenealogistService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: GenealogistService;
+  let store: MockStore<any>;
+
+  beforeEach(
+    () => {
+      TestBed.configureTestingModule(
+        {
+          providers: [provideMockStore({ initialState })]
+        }
+      );
+      service = TestBed.get(GenealogistService);
+      store = TestBed.get(Store);
+    }
+  );
 
   it('should be created', () => {
-    const service: GenealogistService = TestBed.get(GenealogistService);
     expect(service).toBeTruthy();
   });
 
@@ -103,4 +119,14 @@ describe('GenealogistService', () => {
       expect(newTree.edges.length).toBe(4);
     }
   );
+
+  it(
+    'should return null',
+    () => {
+      const filteredTree = service.search('bob', newData);
+      expect(filteredTree).toBeNull();
+
+    }
+  );
+
 });

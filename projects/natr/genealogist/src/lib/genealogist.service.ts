@@ -5,6 +5,7 @@ import {doCallbackSearch, doSearch, SearchCallbackFunctionType} from './+state/s
 import {TreeModel} from '@natr/the-trees/lib/models/tree.model';
 import {Edge, Node} from '@swimlane/ngx-graph';
 import {sprintf} from 'sprintf-js';
+import {HistorianService, Logging} from '@natr/historian';
 
 class NodeMap extends Map<string, Node> {
 }
@@ -23,10 +24,12 @@ interface FamilyTreeNode extends Node {
 // parent.child
 const keyFormat = '%s.%s';
 
+@Logging
 @Injectable({
   providedIn: 'root'
 })
 export class GenealogistService {
+  private logger: HistorianService;
 
   constructor(private treeStore: Store<any>) {
     this.treeStore.select(selectTreeData)
@@ -126,9 +129,13 @@ export class GenealogistService {
     return newTreeData;
   }
 
-  static search(search, treeData: TreeModel): TreeModel {
+  search(search, treeData: TreeModel): TreeModel {
     const root = treeData.nodes.find(node => node.label.includes(search));
-    console.log(`${GenealogistService.name} root`, root);
+    this.logger.debug(`root`, root);
+    if (!root) {
+      this.logger.debug('node not found, returning null');
+      return null;
+    }
 
     return GenealogistService.buildFlatTree(root, treeData);
   }

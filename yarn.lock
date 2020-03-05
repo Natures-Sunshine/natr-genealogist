@@ -886,10 +886,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@natr/historian@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@natr/historian/-/historian-0.0.4.tgz#2b4cf077e2d9340efdf552586985e0cd8979e13e"
+  integrity sha512-z6o+ddhth6EuHiNuREiZiSY46FQW7XEAuxtOkEhX05wRc0GSjwwsR0vSZR7C7FRhvNhyEgkwzOKF7GZzblGNHg==
+
 "@natr/the-trees@file:../natr-the-trees/dist/natr/the-trees":
-  version "0.0.9"
-  dependencies:
-    tslib "^1.9.0"
+  version "1.0.0"
 
 "@ngrx/effects@^8.6.0":
   version "8.6.0"

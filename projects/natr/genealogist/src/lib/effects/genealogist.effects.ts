@@ -8,10 +8,12 @@ import {Action, Store} from '@ngrx/store';
 import {CallbackSearchActionPropType, doCallbackSearch, doSearch, SearchActionPropType} from '../+state/search/actions/search.actions';
 import {TreeModel} from '@natr/the-trees/lib/models/tree.model';
 import {GenealogistService} from '../genealogist.service';
+import {HistorianService, Logging} from '@natr/historian';
 
-
+@Logging
 @Injectable()
 export class GenealogistEffects {
+  private logger: HistorianService;
 
   private withState = concatMap(
     (action: Action) => of(action)
@@ -27,10 +29,12 @@ export class GenealogistEffects {
         this.withState,
         tap(
           ([action, treeData]: [SearchActionPropType & Action, TreeModel]) => {
-            console.log(`${GenealogistEffects.name} loadSearch action`, action);
-            console.log(`${GenealogistEffects.name} loadSearch treeData`, treeData);
-            const filteredData = GenealogistService.search(action.searchObject, treeData);
-            this.treeDataFacade.dispatchLocalLoadTree(filteredData);
+            this.logger.debug(`loadSearch action`, action);
+            this.logger.debug(`loadSearch treeData`, treeData);
+            const filteredData = this.genealogistService.search(action.searchObject, treeData);
+            if (filteredData) {
+              this.treeDataFacade.dispatchLocalLoadTree(filteredData);
+            }
           }
         )
       );
@@ -45,8 +49,8 @@ export class GenealogistEffects {
         this.withState,
         tap(
           ([action, treeData]: [CallbackSearchActionPropType & Action, TreeModel]) => {
-            console.log(`${GenealogistEffects.name} loadCallbackSearch action`, action);
-            console.log(`${GenealogistEffects.name} loadCallbackSearch treeData`, treeData);
+            this.logger.debug(`loadCallbackSearch action`, action);
+            this.logger.debug(`loadCallbackSearch treeData`, treeData);
             const filteredData = action.callback(action.searchObject, treeData);
             this.treeDataFacade.dispatchLocalLoadTree(filteredData);
           }
